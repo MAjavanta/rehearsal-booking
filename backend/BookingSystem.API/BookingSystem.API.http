@@ -3,3 +3,4 @@
 GET {{BookingSystem.API_HostAddress}}/api/rooms/
 
 ###
+GET {{BookingSystem.API_HostAddress}}/api/health/
