@@ -1,6 +1,9 @@
 import "./App.css";
 import { useEffect } from "react";
 import healthCheck from "./api/health";
+import { Routes, Route } from "react-router-dom";
+import RoomsPage from "./pages/RoomsPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   useEffect(() => {
@@ -9,7 +12,10 @@ function App() {
   }, []);
   return (
     <>
-      <h1>Hello From React</h1>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/rooms" element={<RoomsPage />} />
+      </Routes>
     </>
   );
 }
