@@ -19,7 +19,9 @@ export default function RoomsPage() {
       <Link to="/">Home</Link>
       <ul>
         {rooms?.map((room) => (
-          <li key={room.id}>{room.name}</li>
+          <li key={room.id}>
+            {room.name} <Link to={`/book/${room.id}`}>Book</Link>
+          </li>
         ))}
       </ul>
     </>

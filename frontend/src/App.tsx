@@ -4,6 +4,7 @@ import healthCheck from "./api/health";
 import { Routes, Route } from "react-router-dom";
 import RoomsPage from "./pages/RoomsPage";
 import HomePage from "./pages/HomePage";
+import BookingPage from "./pages/BookingPage";
 
 function App() {
   useEffect(() => {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/rooms" element={<RoomsPage />} />
+        <Route path="/book/:roomId" element={<BookingPage />} />
       </Routes>
     </>
   );
