@@ -1,9 +1,9 @@
 import { baseAddress } from "./client";
 
 export interface Room {
-  Id: number;
-  Name: string;
-  HourlyRate: number;
+  id: number;
+  name: string;
+  hourlyRate: number;
 }
 
 export default async function GetRooms(): Promise<Room[]> {

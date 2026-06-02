@@ -1,16 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import GetRooms from "../api/rooms";
+import GetRooms, { type Room } from "../api/rooms";
 
 export default function RoomsPage() {
+  const [rooms, setRooms] = useState<Room[]>();
   useEffect(() => {
-    const rooms = GetRooms();
-    console.log(rooms);
+    async function loadRooms() {
+      const roomsData = await GetRooms();
+      setRooms(roomsData);
+    }
+
+    loadRooms();
   }, []);
+
   return (
     <>
       <div>Rooms Page</div>
       <Link to="/">Home</Link>
+      <ul>
+        {rooms?.map((room) => (
+          <li key={room.id}>{room.name}</li>
+        ))}
+      </ul>
     </>
   );
 }
