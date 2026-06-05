@@ -7,3 +7,20 @@ GET {{BookingSystem.API_HostAddress}}/api/health/
 
 ###
 GET {{BookingSystem.API_HostAddress}}/api/availability/?id=3&date=2026-04-01
+
+###
+GET {{BookingSystem.API_HostAddress}}/api/booking/
+
+###
+POST {{BookingSystem.API_HostAddress}}/api/booking/
+Content-Type: application/json
+
+{
+    "roomId": 1,
+    "customerName": "Evelyn",
+    "customerEmail": "evelyn@hotmail.com",
+    "customerPhone": "012328399",
+    "startTime": "17:00",
+    "endTime": "20:00",
+    "bookingDate": "2026-07-13"
+}
