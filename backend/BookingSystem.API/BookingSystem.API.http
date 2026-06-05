@@ -4,3 +4,6 @@ GET {{BookingSystem.API_HostAddress}}/api/rooms/
 
 ###
 GET {{BookingSystem.API_HostAddress}}/api/health/
+
+###
+GET {{BookingSystem.API_HostAddress}}/api/availability/?id=3&date=2026-04-01

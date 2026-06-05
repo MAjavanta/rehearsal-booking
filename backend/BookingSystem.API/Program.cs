@@ -1,6 +1,9 @@
+using BookingSystem.API.Services;
+
 const string CORS_POLICY_FRONTEND = "Cors_Policy_Frontend";
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<IAvailabilityService, AvailabilityService>();
 builder.Services.AddControllers();
 
 builder.Services.AddCors(opt =>
