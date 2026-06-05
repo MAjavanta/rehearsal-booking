@@ -2,7 +2,7 @@ using BookingSystem.API.Enums;
 
 namespace BookingSystem.API.Models;
 
-public class Bookings
+public class Booking
 {
     public int Id { get; set; }
     public int RoomId { get; set; }

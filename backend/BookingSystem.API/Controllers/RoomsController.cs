@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.ActionConstraints;
 
 namespace BookingSystem.API.Controllers;
 
-public class RoomsController : BaseApiController
+public class RoomController : BaseApiController
 {
     private static readonly List<Room> _rooms =
     [

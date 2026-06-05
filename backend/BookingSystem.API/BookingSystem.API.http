@@ -9,10 +9,10 @@ GET {{BookingSystem.API_HostAddress}}/api/health/
 GET {{BookingSystem.API_HostAddress}}/api/availability/?id=3&date=2026-04-01
 
 ###
-GET {{BookingSystem.API_HostAddress}}/api/booking/
+GET {{BookingSystem.API_HostAddress}}/api/bookings/
 
 ###
-POST {{BookingSystem.API_HostAddress}}/api/booking/
+POST {{BookingSystem.API_HostAddress}}/api/bookings/
 Content-Type: application/json
 
 {

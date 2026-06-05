@@ -5,15 +5,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookingSystem.API.Controllers;
 
-public class BookingController : BaseApiController
+public class BookingsController : BaseApiController
 {
-    private static readonly List<Bookings> _bookings = [];
+    private static readonly List<Booking> _bookings = [];
 
     [HttpPost]
     public IActionResult CreateBookingRequest([FromBody] CreateBookingRequestDTO bookingRequestDTO)
     {
         var id = _bookings.Any() ? _bookings.Max(booking => booking.Id) + 1 : 1;
-        Bookings newBooking = new()
+        Booking newBooking = new()
         {
             Id = id,
             RoomId = bookingRequestDTO.RoomId,
