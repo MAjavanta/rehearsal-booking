@@ -26,7 +26,8 @@ public class BookingsController : BaseApiController
             Status = BookingStatus.Pending
         };
         _bookings.Add(newBooking);
-        return Created($"/api/booking/{id}", newBooking);
+        // TODO: Create booking response DTO
+        return Created($"/api/booking/{id}", bookingRequestDTO);
     }
 
     [HttpGet]
