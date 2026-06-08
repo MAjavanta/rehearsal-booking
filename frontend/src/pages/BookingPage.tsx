@@ -1,10 +1,13 @@
 import { useParams } from "react-router-dom";
 import getAvailability from "../api/availability";
 import { useEffect, useState } from "react";
-import postBooking, { type bookingRequest } from "../api/booking";
+import postBooking from "../api/booking";
+
+type bookingStage = "date" | "slots" | "details";
 
 export default function BookingPage() {
   const { roomId } = useParams();
+  const [stage, setStage] = useState<bookingStage>("date");
 
   const [timeSlots, setTimeSlots] = useState<string[]>([]);
   useEffect(() => {
@@ -29,16 +32,30 @@ export default function BookingPage() {
     console.log(data);
   }
 
+  function nextStage() {
+    setStage("slots");
+  }
+
   const timeSlotList = timeSlots.map((slot) => (
     <li key={slot}>
       {slot} <button onClick={() => bookTime(slot)}>Book</button>
     </li>
   ));
+
   return (
     <>
       <div>BookingPage</div>
-      <p>Room ID: {roomId}</p>
-      <ul>{timeSlotList}</ul>
+      {stage === "date" && (
+        <div>
+          Select Date: <button onClick={nextStage}>Select Date</button>
+        </div>
+      )}
+      {stage === "slots" && (
+        <div>
+          <p>Room ID: {roomId}</p>
+          <ul>{timeSlotList}</ul>
+        </div>
+      )}
     </>
   );
 }
